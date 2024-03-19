@@ -10,7 +10,21 @@ export default function Quiz() {
   const [answers, setAnswers] = useState([]);
   const currentQuestion = QUESTIONS[answers.length];
 
-  return <div id='quiz'>
-    <Question question={currentQuestion} />
-  </div>;
+  /**
+   * Handling answer selection
+   *
+   * @param {string} answer
+   */
+  function handleAnswerSelection(answer) {
+    setAnswers((answers) => [...answers, answer]);
+  }
+
+  return (
+    <div id="quiz">
+      <Question
+        question={currentQuestion}
+        onAnswerSelect={handleAnswerSelection}
+      />
+    </div>
+  );
 }

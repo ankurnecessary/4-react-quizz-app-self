@@ -5,12 +5,21 @@ import PropTypes from 'prop-types';
  *
  * @return {JSX.Element}
  */
-export default function Answers({options}) {
+export default function Answers({options, onSelect}) {
+  /**
+   * To handle answer selection
+   *
+   * @param {string} selectedAnswer
+   */
+  function handleButtonClick(selectedAnswer) {
+    onSelect(selectedAnswer);
+  }
+
   return (
     <ul>
       {options.map((option) => (
         <li key={option} className='answer'>
-          <button>{option}</button>
+          <button onClick={() => handleButtonClick(option)}>{option}</button>
         </li>
       ))}
     </ul>
@@ -19,4 +28,5 @@ export default function Answers({options}) {
 
 Answers.propTypes = {
   options: PropTypes.array,
+  onSelect: PropTypes.func,
 };
