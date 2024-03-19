@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from './components/Header';
+import Quiz from './components/Quiz';
 /**
  * Main App component
  *
@@ -8,6 +9,9 @@ import Header from './components/Header';
 function App() {
   return <>
     <Header />
+    <main>
+      <Quiz />
+    </main>
   </>;
 }
 
