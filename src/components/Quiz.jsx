@@ -1,5 +1,6 @@
-import React from 'react';
-import Question from './Question';
+import React, {useState} from 'react';
+import Question from './Question.jsx';
+import QUESTIONS from '../questions';
 /**
  * Quiz component in which all quiz related functionalities will run
  *
