@@ -7,7 +7,10 @@ import QUESTIONS from '../questions';
  * @return {JSX.Element}
  */
 export default function Quiz() {
-  return <div>
-    <Question />
+  const [answers, setAnswers] = useState([]);
+  const currentQuestion = QUESTIONS[answers.length];
+
+  return <div id='quiz'>
+    <Question question={currentQuestion} />
   </div>;
 }
