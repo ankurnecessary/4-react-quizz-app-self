@@ -16,15 +16,23 @@ export default function Quiz() {
    * @param {string} answer
    */
   function handleAnswerSelection(answer) {
-    setAnswers((answers) => [...answers, answer]);
+    setAnswers((prevAnswers) => [...prevAnswers, answer]);
+  }
+
+  /**
+   * To handle if a question is skipped
+   */
+  function handleSkipQuestion() {
+    setAnswers((prevAnswers) => [...prevAnswers, null]);
   }
 
   return (
     <div id="quiz">
-      <Question
+      {(answers.length < QUESTIONS.length) && <Question
         question={currentQuestion}
         onAnswerSelect={handleAnswerSelection}
-      />
+        onSkipQuestion={handleSkipQuestion}
+      />}
     </div>
   );
 }
