@@ -7,6 +7,8 @@ import QUESTIONS from '../questions';
  * @return {JSX.Element}
  */
 export default function Quiz() {
+  // answer could be null or has the answer string.
+  // Null when answered is skipped via timer otherwise selected answer.
   const [answers, setAnswers] = useState([]);
   const currentQuestion = QUESTIONS[answers.length];
 
