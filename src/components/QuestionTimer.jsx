@@ -6,13 +6,11 @@ import PropTypes from 'prop-types';
  *
  * @return {JSX.Element}
  */
-export default function QuestionTimer({maxTime, skipQuestion}) {
+export default function QuestionTimer({maxTime, skipQuestion, answerState}) {
   const [remainingTime, setRemainingTime] = useState(maxTime);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      skipQuestion();
-    }, maxTime);
+    const timeout = setTimeout(skipQuestion, maxTime);
 
     return () => {
       clearTimeout(timeout);
@@ -29,10 +27,18 @@ export default function QuestionTimer({maxTime, skipQuestion}) {
     };
   }, []);
 
-  return <progress max={maxTime} value={remainingTime} />;
+  return (
+    <progress
+      id="question-time"
+      max={maxTime}
+      value={remainingTime}
+      className={answerState}
+    />
+  );
 }
 
 QuestionTimer.propTypes = {
   maxTime: PropTypes.number,
   skipQuestion: PropTypes.func,
+  answerState: PropTypes.string,
 };

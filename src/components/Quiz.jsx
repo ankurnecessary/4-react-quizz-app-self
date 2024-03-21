@@ -30,11 +30,14 @@ export default function Quiz() {
 
   return (
     <div id="quiz">
-      {(answers.length < QUESTIONS.length) && <Question
-        question={currentQuestion}
-        onAnswerSelect={handleAnswerSelection}
-        onSkipQuestion={handleSkipQuestion}
-      />}
+      {answers.length < QUESTIONS.length && (
+        <Question
+          key={currentQuestion.id}
+          question={currentQuestion}
+          onAnswerSelect={handleAnswerSelection}
+          onSkipQuestion={handleSkipQuestion}
+        />
+      )}
     </div>
   );
 }
