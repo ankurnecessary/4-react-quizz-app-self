@@ -1,4 +1,5 @@
-# 4-react-quizz-app-self
+# 4-react-quiz-app-self
+
 Recreating quiz app my self
 
 Working with:
@@ -31,6 +32,7 @@ Working with:
 26. If we have multiple components having **key** attribute with them and all of them belong to same entity then we should consider making a separate component for that entity and use **key** attribute over it.
 27. We as a developer cannot consume key prop. It is exclusively for the react.
 28. Why use PropTypes instead of TypeScript? Answer: type-checking props using TypeScript can only be effective when the prop's value is hardcoded. Even though you claim that the data from the API is a number, you won't get any errors when the data is a string. Since type-checking is done during runtime, PropTypes is a better tool for unknown data.
+29. React query is a good plugin for HTTP calls via react application. AJAX
 
 [Eslint configuration - Best linting configuration is to use "format on save" and don't use "formatting option of ES Lint"](https://www.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/8231814#questions/20789494)
 
