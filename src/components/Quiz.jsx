@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import Question from './Question.jsx';
 import QUESTIONS from '../questions';
+import Summary from './Summary.jsx';
+
 /**
  * Quiz component in which all quiz related functionalities will run
  *
@@ -26,6 +28,10 @@ export default function Quiz() {
    */
   function handleSkipQuestion() {
     setAnswers((prevAnswers) => [...prevAnswers, null]);
+  }
+
+  if (answers.length === QUESTIONS.length) {
+    return <Summary answers={answers} />;
   }
 
   return (
